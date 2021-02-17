@@ -22,7 +22,7 @@ jobs:
           name: Prepare repository
           shell: /bin/bash
           command: |
-            .scripts/prepare-repo.sh
+            bash .scripts/prepare-repo.sh
       - restore_cache:
           key: v1-dependency-cache-{{ checksum "requirements.txt" }}
       - run:
