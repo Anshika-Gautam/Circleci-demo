@@ -18,8 +18,7 @@ jobs:
 
     steps:
       - checkout
-      - restore_cache:
-          key: v1-dependency-cache-py36-{{ checksum "requirements.txt" }}
+      - run: pip install -r ~/monitor-ingest/requirements.txt
       - run:
           name: Download dependencies
           # NOTE: We don't want to use default "-e" option because this means
@@ -38,11 +37,6 @@ jobs:
           # doesn't declare support for Python 3
           shell: /bin/bash
           command: ~/ci/.circle/test ; ~/ci/.circle/exit_on_py3_checks $?
-      - save_cache:
-          key: v1-dependency-cache-py36-{{ checksum "requirements.txt" }}
-          paths:
-            - ~/.cache/pip
-            - ~/.apt-cache
       # NOTE: We use virtualenv files from Python 3.6 step in "deploy" job so we
       # only persist paths from this job
       - persist_to_workspace:
