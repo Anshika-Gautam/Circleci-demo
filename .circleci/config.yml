@@ -60,6 +60,7 @@ workflows:
   build_test_deploy_on_push:
     jobs:
       - build_and_test_python36
-          filters:
-            branches:
-              only: master
+        filters:
+          branches:
+            only:
+              - master
