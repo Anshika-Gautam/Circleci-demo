@@ -18,7 +18,10 @@ jobs:
 
     steps:
       - checkout
-      - run: pip install -r monitor_ingest/requirements.txt
+      - run:
+          name: Prepare repository
+          command: |
+            .scripts/prepare-repo.sh
       - run:
           name: Download dependencies
           # NOTE: We don't want to use default "-e" option because this means
