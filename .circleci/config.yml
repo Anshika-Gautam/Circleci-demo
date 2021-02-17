@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - checkout
-      - run: pip install -r ~/monitor-ingest/requirements.txt
+      - run: pip install -r monitor-ingest/requirements.txt
       - run:
           name: Download dependencies
           # NOTE: We don't want to use default "-e" option because this means
