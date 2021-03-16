@@ -61,7 +61,7 @@ jobs:
 
 workflows:
   version: 2.1
-  # Workflow which runs on each push
+  # Workflow which runs on each push actually
   build_test_deploy_on_push:
     jobs:
       - build_and_test_python36:
