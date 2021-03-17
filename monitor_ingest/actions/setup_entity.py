@@ -67,7 +67,7 @@ class SetupEntityAction(Action):
         if self._data_file_path:
             result = None
             """------Usage: 3. (X) Add Dimension - using a json payload------"""
-            with open(selresult =f._data_file_path, 'r') as f:
+            with open(self._data_file_path, 'r') as f:
                 try:
                     op_add = dimension.add_dimensions_data(f.read(),
                                                            credentials=self._credentials)
