@@ -24,13 +24,13 @@ class SetupEntityAction(Action):
     def run(self):
         status = False
         if self._action_type == "SetupEntityAction":
-            self.setup_EntityAction()
+            status = self.setup_EntityAction()
         elif self._action_type == "SetupAddConstants":
-            self.setup_AddConstants()
+            status = self.setup_AddConstants()
         elif self._action_type == "SetupAddDimensions":
-            self.setup_AddDimensions()
+            status = self.setup_AddDimensions()
         elif self._action_type == "SetupAddFunctions":
-            self.setup_AddFunctions()
+            status = self.setup_AddFunctions()
         return status
 
     def setup_EntityAction(self):
