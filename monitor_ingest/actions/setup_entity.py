@@ -35,52 +35,60 @@ class SetupEntityAction(Action):
 
     def setup_EntityAction(self):
         if self._data_file_path:
+            result = None
             """------Usage: 1. (X) Create Entity Type - using a json payload-----"""
             with open(self._data_file_path, 'r') as f:
                 try:
                     op_create = entitytype.create_custom_entitytype(f.read(),
                                                                     credentials=self._credentials)
                     self.logger.info(f'ret_code is {op_create}. \nEntity created successfully')
-                    return True
+                    result = True
                 except Exception as msg:
                     self.logger.debug(f'FAILED STEP: {msg}\nFailed create Entity Type operation')
-                    return False
+                    result = False
+        return result
 
     def setup_AddFunctions(self):
         if self._data_file_path:
+            result = None
             """------Usage: 2. (X) Add Function - using a json payload------"""
             with open(self._data_file_path, 'r') as f:
                 try:
                     op_add = kpifunction.add_functions(f.read(),
                                                        credentials=self._credentials)
                     self.logger.info(f'ret_code is {op_add}. \nKPI Functions added successfully')
-                    return True
+                    result = True
                 except Exception as msg:
                     self.logger.debug(f'FAILED STEP: {msg}\nFailed add functions operation')
-                    return False
+                    result = False
+        return result
 
     def setup_AddDimensions(self):
         if self._data_file_path:
+            result = None
             """------Usage: 3. (X) Add Dimension - using a json payload------"""
-            with open(self._data_file_path, 'r') as f:
+            with open(selresult =f._data_file_path, 'r') as f:
                 try:
                     op_add = dimension.add_dimensions_data(f.read(),
                                                            credentials=self._credentials)
                     self.logger.info(f'ret_code is {op_add}. \nDimension data added successfully')
-                    return True
+                    result = True
                 except Exception as msg:
                     self.logger.debug(f'FAILED STEP: {msg}\nFailed add dimension data operation')
-                    return False
+                    result = False
+        return result
 
     def setup_AddConstants(self):
         if self._data_file_path:
+            result = None
             """------Usage: 4. (X) Create Constants - using a json payload------"""
             with open(self._data_file_path, 'r') as f:
                 try:
                     op_create = constants.create_constants(f.read(),
                                                            credentials=self._credentials)
                     self.logger.info(f'ret_code is {op_create}. \nConstants created successfully')
-                    return True
+                    result = True
                 except Exception as msg:
                     self.logger.debug(f'FAILED STEP: {msg}\nFailed Create Constants operation')
-                    return False
+                    result = False
+        return result
