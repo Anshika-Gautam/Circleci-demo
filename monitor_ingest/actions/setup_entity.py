@@ -1,4 +1,3 @@
-import yaml
 from st2common.runners.base_action import Action
 from mam.sdk import (entitytype, constants, kpifunction, dimension)
 
