@@ -34,8 +34,8 @@ class SetupEntityAction(Action):
         return status
 
     def setup_EntityAction(self):
+        result = None
         if self._data_file_path:
-            result = None
             """------Usage: 1. (X) Create Entity Type - using a json payload-----"""
             with open(self._data_file_path, 'r') as f:
                 try:
@@ -49,8 +49,8 @@ class SetupEntityAction(Action):
         return result
 
     def setup_AddFunctions(self):
+        result = None
         if self._data_file_path:
-            result = None
             """------Usage: 2. (X) Add Function - using a json payload------"""
             with open(self._data_file_path, 'r') as f:
                 try:
@@ -64,8 +64,8 @@ class SetupEntityAction(Action):
         return result
 
     def setup_AddDimensions(self):
+        result = None
         if self._data_file_path:
-            result = None
             """------Usage: 3. (X) Add Dimension - using a json payload------"""
             with open(self._data_file_path, 'r') as f:
                 try:
@@ -79,8 +79,8 @@ class SetupEntityAction(Action):
         return result
 
     def setup_AddConstants(self):
+        result = None
         if self._data_file_path:
-            result = None
             """------Usage: 4. (X) Create Constants - using a json payload------"""
             with open(self._data_file_path, 'r') as f:
                 try:
